@@ -1,16 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.836,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmLogin.dfm=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\PassWord.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.093,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.273,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.023,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\PrjETProgrammLogin.dproj=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.166,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETMain.pas=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.166,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETMain.dfm=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.836,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmLogin.pas=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\PassWord.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.093,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.273,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.836,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmLogin.dfm=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\PassWord.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.166,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETMain.dfm=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.023,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\PassWord.pas</Transaction>
     <Transaction>2023.11.22 08:23:40.819,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas</Transaction>
     <Transaction>2023.11.22 08:35:27.073,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETRegister.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas</Transaction>
     <Transaction>2023.11.22 08:35:27.073,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETRegister.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.dfm</Transaction>
-  </Transactions>
+    <Transaction>2023.11.22 09:37:50.464,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
+    <Transaction>2023.11.22 10:04:28.318,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETDatamodule1.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
+    <Transaction>2023.11.22 10:04:28.318,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETDatamodule1.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.dfm</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="UfrmETMain.pas"/>
+    <File Path="UfrmETMain.dfm"/>
+    <File Path="UfrmETRegister.pas"/>
+    <File Path="UfrmETRegister.dfm"/>
+    <File Path="UfrmLogin.pas"/>
+    <File Path="UfrmLogin.dfm"/>
+    <File Path="UfrmETDatamodule1.pas"/>
+    <File Path="UfrmETDatamodule1.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>

@@ -92,12 +92,32 @@ object Form2: TForm2
     ShowHint = True
     TabOrder = 4
   end
+  object txtEnterPassword: TEdit
+    Left = 184
+    Top = 130
+    Width = 201
+    Height = 23
+    ImeName = 'German'
+    TabOrder = 5
+  end
+  object txtConfirmPassword: TEdit
+    Left = 416
+    Top = 130
+    Width = 201
+    Height = 23
+    Hint = 'repeat Password'
+    ImeName = 'German'
+    ParentShowHint = False
+    CanUndoSelText = True
+    ShowHint = True
+    TabOrder = 6
+  end
   object DBImage1: TDBImage
     Left = 8
     Top = 44
     Width = 150
     Height = 150
-    TabOrder = 5
+    TabOrder = 7
   end
   object btnImgChange: TButton
     Left = 184
@@ -105,28 +125,6 @@ object Form2: TForm2
     Width = 106
     Height = 25
     Caption = 'change Picture'
-    TabOrder = 6
-  end
-  object txtEnterPassword: TEdit
-    Left = 184
-    Top = 130
-    Width = 201
-    Height = 23
-    Hint = 'Enter Username'
-    ImeName = 'German'
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 7
-  end
-  object txtRepeatPassword: TEdit
-    Left = 416
-    Top = 130
-    Width = 249
-    Height = 23
-    Hint = 'Enter Username'
-    ImeName = 'German'
-    ParentShowHint = False
-    ShowHint = True
     TabOrder = 8
   end
 end

@@ -4,8 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, UfrmETDatamodule1,
-  Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls;
 
 type
   TForm2 = class(TForm)
@@ -16,13 +15,13 @@ type
     btnCancel: TButton;
     txtEnterEmail: TEdit;
     lblEnterEmail: TLabel;
+    txtEnterPassword: TEdit;
     lblEnterPassword: TLabel;
+    txtConfirmPassword: TEdit;
     lblConfirmPassword: TLabel;
     DBImage1: TDBImage;
     btnImgChange: TButton;
     Label1: TLabel;
-    txtEnterPassword: TEdit;
-    txtRepeatPassword: TEdit;
   private
     { Private-Deklarationen }
   public

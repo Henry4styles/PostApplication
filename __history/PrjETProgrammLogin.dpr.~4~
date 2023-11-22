@@ -4,8 +4,7 @@ uses
   Vcl.Forms,
   UfrmETMain in 'UfrmETMain.pas' {Form1},
   UfrmLogin in 'UfrmLogin.pas' {PasswordDlg},
-  UfrmETRegister in 'UfrmETRegister.pas' {Form2},
-  UfrmETDatamodule1 in 'UfrmETDatamodule1.pas' {DataModule1: TDataModule};
+  UfrmETRegister in 'UfrmETRegister.pas' {Form2};
 
 {$R *.res}
 
@@ -15,6 +14,5 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TPasswordDlg, PasswordDlg);
   Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TDataModule1, DataModule1);
   Application.Run;
 end.

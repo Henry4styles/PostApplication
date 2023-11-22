@@ -1,4 +1,4 @@
-unit Unit1;
+unit UfrmETDatamodule1;
 
 interface
 
@@ -7,9 +7,11 @@ uses
 
 type
   TDataModule1 = class(TDataModule)
-    ADOQuery1: TADOQuery;
-    ADOConnection1: TADOConnection;
+    QueryRegister: TADOQuery;
     DataSource1: TDataSource;
+    ADOConnection1: TADOConnection;
+    QueryLoginCheck: TADOQuery;
+    QueryLoadPost: TADOQuery;
   private
     { Private-Deklarationen }
   public
