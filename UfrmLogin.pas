@@ -2,8 +2,10 @@
 
 interface
 
-uses Winapi.Windows, System.SysUtils, System.Classes, Vcl.Graphics, Vcl.Forms,
-  Vcl.Controls, Vcl.StdCtrls, Vcl.Buttons;
+uses
+     Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+     Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, UfrmETDatamodule1,
+     Vcl.Buttons;
 
 type
   TPasswordDlg = class(TForm)
@@ -13,6 +15,7 @@ type
     btnCancel: TButton;
     lblPassword: TLabel;
     txtPassword: TEdit;
+    procedure btnOKClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -26,5 +29,33 @@ implementation
 
 {$R *.dfm}
 
+procedure TPasswordDlg.btnOKClick(Sender: TObject);
+begin
+    try
+        DataModule1.QueryLoginCheck.SQL.text := 'SELECT UserID FROM ETUserLoginData WHERE Username = :Username and Password = :Password';
+        DataModule1.QueryLoginCheck.Prepared;
+        DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Username' ).Value := txtUsername.text;
+        DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Password' ).Value := txtPassword.text;
+        DataModule1.QueryLoginCheck.Open;
+        if DataModule1.QueryLoginCheck.FieldByName('UserID').Value = NULL then
+        begin
+           ShowMessage('Wrong Password or Username!');
+        end else
+        begin
+            DataModule1.QueryLoginCheck.FieldByName('UserID').Value;
+            Self.Close;
+
+        end;
+
+    except
+
+        ShowMessage('Fehler!');
+
+
+    end;
+
+
+end;
+
 end.
- 
+

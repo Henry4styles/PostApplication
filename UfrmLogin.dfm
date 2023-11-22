@@ -42,6 +42,7 @@ object PasswordDlg: TPasswordDlg
     DisabledImageName = 'btnOK'
     ModalResult = 1
     TabOrder = 1
+    OnClick = btnOKClick
   end
   object btnCancel: TButton
     Left = 150

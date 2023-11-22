@@ -64,6 +64,7 @@ object Form2: TForm2
     Height = 25
     Caption = 'register'
     TabOrder = 1
+    OnClick = btnRegisterClick
   end
   object btnSwitchLogin: TButton
     Left = 416

@@ -23,6 +23,7 @@ type
     Label1: TLabel;
     txtEnterPassword: TEdit;
     txtRepeatPassword: TEdit;
+    procedure btnRegisterClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -35,5 +36,12 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm2.btnRegisterClick(Sender: TObject);
+begin
+    Datamodule1.Queryregister.SQL.Text:= 'SELECT * FROM ETAccountInfo, ETUserLoginData';
+    Datamodule1.QueryRegister.Open;
+
+end;
 
 end.

@@ -2,7 +2,6 @@ object DataModule1: TDataModule1
   Height = 412
   Width = 654
   object QueryRegister: TADOQuery
-    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>
@@ -36,7 +35,11 @@ object DataModule1: TDataModule1
   end
   object QueryLoadPost: TADOQuery
     Connection = ADOConnection1
+    CursorType = ctStatic
+    DataSource = DataSource1
     Parameters = <>
+    SQL.Strings = (
+      'SELECT * FROM ETUserLoginData')
     Left = 432
     Top = 296
   end
