@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, UfrmETDatamodule1,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask,  UfrmETDatamodule1, Data.DB, Data.Win.ADODB,
   Vcl.ExtCtrls;
 
 type
@@ -14,12 +14,8 @@ type
     btnRegister: TButton;
     btnSwitchLogin: TButton;
     btnCancel: TButton;
-    txtEnterEmail: TEdit;
-    lblEnterEmail: TLabel;
     lblEnterPassword: TLabel;
     lblConfirmPassword: TLabel;
-    DBImage1: TDBImage;
-    btnImgChange: TButton;
     Label1: TLabel;
     txtEnterPassword: TEdit;
     txtRepeatPassword: TEdit;
@@ -39,8 +35,16 @@ implementation
 
 procedure TForm2.btnRegisterClick(Sender: TObject);
 begin
-    Datamodule1.Queryregister.SQL.Text:= 'SELECT * FROM ETAccountInfo, ETUserLoginData';
-    Datamodule1.QueryRegister.Open;
+    if txtEnterPassword.Text = txtrepeatPassword.text then
+    begin
+        Datamodule1.Queryregister.SQL.Text:= 'INSERT INTO ETUserLoginData(Username, Password) VALUES(:UN, :PW)';
+        DataModule1.QueryRegister.Parameters.ParamByName('UN').Value := txtEnterUsername.Text;
+        DataModule1.QueryRegister.Parameters.ParamByName('PW').Value := txtEnterPassword.Text;
+        Datamodule1.QueryRegister.execSQL;
+        self.Close;
+
+    end;
+
 
 end;
 

@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 0
-  Top = 0
+  Left = 409
+  Top = 83
   Caption = 'Form1'
   ClientHeight = 789
   ClientWidth = 987
@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu1
+  Position = poDesigned
   TextHeight = 15
   object Label2: TLabel
     Left = 568

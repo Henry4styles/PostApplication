@@ -2,6 +2,7 @@ object DataModule1: TDataModule1
   Height = 412
   Width = 654
   object QueryRegister: TADOQuery
+    Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
     Parameters = <>

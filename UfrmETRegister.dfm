@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 0
-  Top = 0
+  Left = 572
+  Top = 497
   Caption = 'Form2'
   ClientHeight = 264
   ClientWidth = 678
@@ -10,6 +10,7 @@ object Form2: TForm2
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  Position = poDesigned
   TextHeight = 15
   object lblEnterUsername: TLabel
     Left = 184
@@ -17,13 +18,6 @@ object Form2: TForm2
     Width = 56
     Height = 15
     Caption = 'Username:'
-  end
-  object lblEnterEmail: TLabel
-    Left = 416
-    Top = 43
-    Width = 32
-    Height = 15
-    Caption = 'Email:'
   end
   object lblEnterPassword: TLabel
     Left = 184
@@ -82,32 +76,6 @@ object Form2: TForm2
     Caption = 'Cancel'
     TabOrder = 3
   end
-  object txtEnterEmail: TEdit
-    Left = 416
-    Top = 64
-    Width = 249
-    Height = 23
-    Hint = 'Enter Email'
-    ImeName = 'German'
-    ParentShowHint = False
-    ShowHint = True
-    TabOrder = 4
-  end
-  object DBImage1: TDBImage
-    Left = 8
-    Top = 44
-    Width = 150
-    Height = 150
-    TabOrder = 5
-  end
-  object btnImgChange: TButton
-    Left = 184
-    Top = 185
-    Width = 106
-    Height = 25
-    Caption = 'change Picture'
-    TabOrder = 6
-  end
   object txtEnterPassword: TEdit
     Left = 184
     Top = 130
@@ -117,17 +85,17 @@ object Form2: TForm2
     ImeName = 'German'
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 7
+    TabOrder = 4
   end
   object txtRepeatPassword: TEdit
     Left = 416
     Top = 130
-    Width = 249
+    Width = 234
     Height = 23
     Hint = 'Enter Username'
     ImeName = 'German'
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 8
+    TabOrder = 5
   end
 end

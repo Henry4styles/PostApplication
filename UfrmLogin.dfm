@@ -1,13 +1,14 @@
 object PasswordDlg: TPasswordDlg
-  Left = 245
-  Top = 108
+  Left = 797
+  Top = 579
   BorderStyle = bsDialog
   Caption = 'Passwort-Dialog'
   ClientHeight = 152
   ClientWidth = 233
   Color = clBtnFace
   ParentFont = True
-  Position = poScreenCenter
+  Position = poDesigned
+  OnShow = FormShow
   TextHeight = 15
   object lblUsername: TLabel
     Left = 8
@@ -40,7 +41,6 @@ object PasswordDlg: TPasswordDlg
     Caption = 'OK'
     Default = True
     DisabledImageName = 'btnOK'
-    ModalResult = 1
     TabOrder = 1
     OnClick = btnOKClick
   end
