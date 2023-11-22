@@ -46,11 +46,14 @@ end;
 
 procedure TForm1.actShowLoginFrmExecute(Sender: TObject);
 begin
+
+    passworddlg := passworddlg.Create(passworddlg);
     PasswordDlg.ShowModal;
 end;
 
 procedure TForm1.actShowRegisterFrmExecute(Sender: TObject);
 begin
+    //UfrmETRegister.Form2 := Form2.Create(Form2);
     UfrmETRegister.Form2.ShowModal;
 end;
 

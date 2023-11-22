@@ -48,33 +48,30 @@ object Form1: TForm1
   object MainMenu1: TMainMenu
     Left = 864
     Top = 120
-    object MnuItmHomepage: TMenuItem
-      Caption = 'Homepage'
-      OnClick = MnuItmHomepageClick
+    object MnuItmStartseite: TMenuItem
+      Caption = 'Startseite'
+      OnClick = MnuItmStartseiteClick
     end
     object MnuItmLogin: TMenuItem
       Caption = 'Login'
-      OnClick = actShowLoginFrmExecute
     end
     object MnuItmRegister: TMenuItem
-      Caption = 'Register'
-      OnClick = actShowRegisterFrmExecute
+      Caption = 'Registrieren'
     end
   end
   object ActionList1: TActionList
     Left = 864
     Top = 304
-    object actShowHomepage: TAction
-      Caption = 'actShowHomepage'
-      OnExecute = actShowHomepageExecute
+    object Action1: TAction
+      Caption = 'Action1'
+      OnExecute = Action1Execute
     end
-    object actShowLoginFrm: TAction
-      Caption = 'actShowLoginFrm'
-      OnExecute = actShowLoginFrmExecute
+    object Action2: TAction
+      Caption = 'Action2'
+      OnExecute = Action2Execute
     end
-    object actShowRegisterFrm: TAction
-      Caption = 'actShowRegisterFrm'
-      OnExecute = actShowRegisterFrmExecute
+    object Action3: TAction
+      Caption = 'Action3'
     end
   end
 end

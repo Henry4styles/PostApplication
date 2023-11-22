@@ -54,11 +54,9 @@ object Form1: TForm1
     end
     object MnuItmLogin: TMenuItem
       Caption = 'Login'
-      OnClick = actShowLoginFrmExecute
     end
     object MnuItmRegister: TMenuItem
       Caption = 'Register'
-      OnClick = actShowRegisterFrmExecute
     end
   end
   object ActionList1: TActionList

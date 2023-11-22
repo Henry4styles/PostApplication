@@ -14,17 +14,18 @@ type
     Panel2: TPanel;
     Memo1: TMemo;
     MainMenu1: TMainMenu;
-    MnuItmHomepage: TMenuItem;
+    MnuItmStartseite: TMenuItem;
     MnuItmLogin: TMenuItem;
     MnuItmRegister: TMenuItem;
     ActionList1: TActionList;
-    actShowHomepage: TAction;
-    actShowLoginFrm: TAction;
-    actShowRegisterFrm: TAction;
-    procedure MnuItmHomepageClick(Sender: TObject);
-    procedure actShowHomepageExecute(Sender: TObject);
-    procedure actShowLoginFrmExecute(Sender: TObject);
-    procedure actShowRegisterFrmExecute(Sender: TObject);
+    Action1: TAction;
+    Action2: TAction;
+    Action3: TAction;
+    procedure MnuItmStartseiteClick(Sender: TObject);
+    procedure Action1Execute(Sender: TObject);
+    procedure Action2Execute(Sender: TObject);
+    procedure Action3Execute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -38,25 +39,32 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.actShowHomepageExecute(Sender: TObject);
+procedure TForm1.Action1Execute(Sender: TObject);
 begin
     Form1.show();
 
 end;
 
-procedure TForm1.actShowLoginFrmExecute(Sender: TObject);
+procedure TForm1.Action2Execute(Sender: TObject);
 begin
     PasswordDlg.ShowModal;
 end;
 
-procedure TForm1.actShowRegisterFrmExecute(Sender: TObject);
+procedure TForm1.Action3Execute(Sender: TObject);
 begin
     UfrmETRegister.Form2.ShowModal;
 end;
 
-procedure TForm1.MnuItmHomepageClick(Sender: TObject);
+procedure TForm1.FormCreate(Sender: TObject);
 begin
-    //PasswordDlg:= PasswordDlg.Create(PasswordDlg);
+    Form2 := Form2.Create(Form2);
+    passworddlg := passworddlg.Create(passworddlg);
+
+end;
+
+procedure TForm1.MnuItmStartseiteClick(Sender: TObject);
+begin
+    PasswordDlg:= PasswordDlg.Create(PasswordDlg);
 end;
 
 end.

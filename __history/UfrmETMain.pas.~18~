@@ -46,6 +46,7 @@ end;
 
 procedure TForm1.actShowLoginFrmExecute(Sender: TObject);
 begin
+
     PasswordDlg.ShowModal;
 end;
 

@@ -1,0 +1,38 @@
+unit UfrmETMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, UfrmLogin;
+
+type
+  TForm1 = class(TForm)
+    Label2: TLabel;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Memo1: TMemo;
+    MainMenu1: TMainMenu;
+    MnuItmStartseite: TMenuItem;
+    MnuItmLogin: TMenuItem;
+    MnuItmRegister: TMenuItem;
+    procedure MnuItmStartseiteClick(Sender: TObject);
+  private
+    { Private-Deklarationen }
+  public
+    { Public-Deklarationen }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.MnuItmStartseiteClick(Sender: TObject);
+begin
+    PasswordDlg:= PasswordDlg.Create(PasswordDlg);
+end;
+
+end.

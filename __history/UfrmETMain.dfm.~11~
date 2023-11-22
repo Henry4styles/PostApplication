@@ -38,8 +38,8 @@ object Form1: TForm1
     end
   end
   object Panel2: TPanel
-    Left = 312
-    Top = 640
+    Left = 280
+    Top = 600
     Width = 185
     Height = 41
     Caption = 'Panel2'
@@ -48,33 +48,15 @@ object Form1: TForm1
   object MainMenu1: TMainMenu
     Left = 864
     Top = 120
-    object MnuItmHomepage: TMenuItem
-      Caption = 'Homepage'
-      OnClick = MnuItmHomepageClick
+    object MnuItmStartseite: TMenuItem
+      Caption = 'Startseite'
+      OnClick = MnuItmStartseiteClick
     end
     object MnuItmLogin: TMenuItem
       Caption = 'Login'
-      OnClick = actShowLoginFrmExecute
     end
     object MnuItmRegister: TMenuItem
-      Caption = 'Register'
-      OnClick = actShowRegisterFrmExecute
-    end
-  end
-  object ActionList1: TActionList
-    Left = 864
-    Top = 304
-    object actShowHomepage: TAction
-      Caption = 'actShowHomepage'
-      OnExecute = actShowHomepageExecute
-    end
-    object actShowLoginFrm: TAction
-      Caption = 'actShowLoginFrm'
-      OnExecute = actShowLoginFrmExecute
-    end
-    object actShowRegisterFrm: TAction
-      Caption = 'actShowRegisterFrm'
-      OnExecute = actShowRegisterFrmExecute
+      Caption = 'Registrieren'
     end
   end
 end
