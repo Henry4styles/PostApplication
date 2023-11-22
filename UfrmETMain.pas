@@ -4,11 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, UfrmLogin, UfrmETRegister, UfrmETDatamodule1,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, UfrmLogin, UfrmETSignUp, UfrmETDatamodule1,
   System.Actions, Vcl.ActnList;
 
 type
-  TForm1 = class(TForm)
+  TfrmETHomepageLogout = class(TForm)
     Label2: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
@@ -16,7 +16,7 @@ type
     MainMenu1: TMainMenu;
     MnuItmHomepage: TMenuItem;
     MnuItmLogin: TMenuItem;
-    MnuItmRegister: TMenuItem;
+    MnuItmSignUp: TMenuItem;
     ActionList1: TActionList;
     actShowHomepage: TAction;
     actShowLoginFrm: TAction;
@@ -33,29 +33,29 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmETHomepageLogout: TfrmETHomepageLogout;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.actShowHomepageExecute(Sender: TObject);
+procedure TfrmETHomepageLogout.actShowHomepageExecute(Sender: TObject);
 begin
-    Form1.show();
+    frmETHomepageLogout.show();
 
 end;
 
-procedure TForm1.actShowLoginFrmExecute(Sender: TObject);
+procedure TfrmETHomepageLogout.actShowLoginFrmExecute(Sender: TObject);
 begin
     PasswordDlg.ShowModal;
 end;
 
-procedure TForm1.actShowRegisterFrmExecute(Sender: TObject);
+procedure TfrmETHomepageLogout.actShowRegisterFrmExecute(Sender: TObject);
 begin
-    UfrmETRegister.Form2.ShowModal;
+    UfrmETSignUp.frmETRegister.ShowModal;
 end;
 
-procedure TForm1.MnuItmHomepageClick(Sender: TObject);
+procedure TfrmETHomepageLogout.MnuItmHomepageClick(Sender: TObject);
 begin
     //PasswordDlg:= PasswordDlg.Create(PasswordDlg);
 end;

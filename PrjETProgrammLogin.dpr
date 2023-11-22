@@ -2,9 +2,9 @@ program PrjETProgrammLogin;
 
 uses
   Vcl.Forms,
-  UfrmETMain in 'UfrmETMain.pas' {Form1},
+  UfrmETMain in 'UfrmETMain.pas' {frmETHomepageLogout},
   UfrmLogin in 'UfrmLogin.pas' {PasswordDlg},
-  UfrmETRegister in 'UfrmETRegister.pas' {Form2},
+  UfrmETSignUp in 'UfrmETSignUp.pas' {frmETRegister},
   UfrmETDatamodule1 in 'UfrmETDatamodule1.pas' {DataModule1: TDataModule};
 
 {$R *.res}
@@ -12,9 +12,9 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmETHomepageLogout, frmETHomepageLogout);
   Application.CreateForm(TPasswordDlg, PasswordDlg);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TfrmETRegister, frmETRegister);
   Application.CreateForm(TDataModule1, DataModule1);
   Application.Run;
 end.

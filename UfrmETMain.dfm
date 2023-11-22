@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmETHomepageLogout: TfrmETHomepageLogout
   Left = 409
   Top = 83
-  Caption = 'Form1'
+  Caption = 'Homepage'
   ClientHeight = 789
   ClientWidth = 987
   Color = clBtnFace
@@ -28,7 +28,7 @@ object Form1: TForm1
     TabOrder = 0
     object Memo1: TMemo
       Left = 32
-      Top = 248
+      Top = 136
       Width = 705
       Height = 273
       BorderStyle = bsNone
@@ -56,8 +56,9 @@ object Form1: TForm1
       Caption = 'Login'
       OnClick = actShowLoginFrmExecute
     end
-    object MnuItmRegister: TMenuItem
-      Caption = 'Register'
+    object MnuItmSignUp: TMenuItem
+      Caption = 'Sign Up'
+      ImageName = 'MnuItmSignUp'
       OnClick = actShowRegisterFrmExecute
     end
   end

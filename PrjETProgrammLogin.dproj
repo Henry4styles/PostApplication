@@ -99,15 +99,15 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UfrmETMain.pas">
-            <Form>Form1</Form>
+            <Form>frmETHomepageLogout</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UfrmLogin.pas">
             <Form>PasswordDlg</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UfrmETRegister.pas">
-            <Form>Form2</Form>
+        <DCCReference Include="UfrmETSignUp.pas">
+            <Form>frmETRegister</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UfrmETDatamodule1.pas">
