@@ -45,11 +45,11 @@ begin
     begin
         try
         begin
-            DataModule1.QueryRegister.SQL.text := 'SELECT UserID FROM ETUserLoginData WHERE Username = :UNA';
-            DataModule1.QueryRegister.prepared;
-            DataModule1.QueryRegister.Parameters.ParamByName( 'UNA' ).Value := txtEnterUsername.text;
-            DataModule1.QueryRegister.Open;
-            Datamodule1.QueryRegister.ExecSQL;
+        DataModule1.QueryRegister.SQL.text := 'SELECT UserID FROM ETUserLoginData WHERE Username = :UNA';
+        DataModule1.QueryRegister.prepared;
+        DataModule1.QueryRegister.Parameters.ParamByName( 'UNA' ).Value := txtEnterUsername.text;
+        DataModule1.QueryRegister.Open;
+        Datamodule1.QueryRegister.ExecSQL;
 //This Code controls if an Account with the Username, which is entered in the txtEnterUsername-editbox already exists. In case, that the Request for
 //the Field UserID WHERE Username = txtEnterUsername.text does throw an Exception, the Code continues normally, because it should not find an
 //Fields with this condition, when there is no Username with txtEnterUsername.text in the Database.

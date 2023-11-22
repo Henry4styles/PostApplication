@@ -69,6 +69,7 @@ begin
                     CreateDir('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User\' + txtEnterUsername.text + '\' + txtEnterUsername.text + 'Account');
                     CreateDir('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User\' + txtEnterUsername.text + '\' + txtEnterUsername.text + 'Posts');
                     ShowMessage('Registration successful!');
+
                     self.Close;
                 end;
             end;
