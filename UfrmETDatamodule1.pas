@@ -19,7 +19,8 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+    DataModule1: TDataModule1;
+
 
 implementation
 

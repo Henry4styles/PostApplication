@@ -2,8 +2,8 @@ object frmETRegister: TfrmETRegister
   Left = 572
   Top = 497
   Caption = 'Registration'
-  ClientHeight = 219
-  ClientWidth = 521
+  ClientHeight = 243
+  ClientWidth = 576
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -33,7 +33,7 @@ object frmETRegister: TfrmETRegister
     Height = 15
     Caption = 'confirm Password:'
   end
-  object Label1: TLabel
+  object lblAlreadyRegistered: TLabel
     Left = 264
     Top = 148
     Width = 100

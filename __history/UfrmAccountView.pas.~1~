@@ -1,0 +1,35 @@
+unit UfrmPostView;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmProfileView = class(TForm)
+    DBImage1: TDBImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Panel1: TPanel;
+    DBText1: TDBText;
+    DBText2: TDBText;
+    DBText3: TDBText;
+    btnSafe: TButton;
+    btnCancel: TButton;
+    btnEdit: TButton;
+  private
+    { Private-Deklarationen }
+  public
+    { Public-Deklarationen }
+  end;
+
+var
+  frmProfileView: TfrmProfileView;
+
+implementation
+
+{$R *.dfm}
+
+end.
