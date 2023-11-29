@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask,  UfrmETDatamodule1, Data.DB, Data.Win.ADODB,
-  Vcl.ExtCtrls, IdHashSha, UfrmLogin;
+  Vcl.ExtCtrls, IdHashSha, UfrmLogin, System.Hash;
 
 type
   TfrmETRegister = class(TForm)
@@ -42,6 +42,7 @@ end;
 
 procedure TfrmETRegister.btnRegisterClick(Sender: TObject);
 begin
+
     if txtEnterPassword.Text = txtrepeatPassword.text then
     begin
 
@@ -61,7 +62,7 @@ begin
             begin
                 Datamodule1.Queryregister.SQL.Text:= 'INSERT INTO ETUserLoginData(Username, Password) VALUES(:UN, :PW)';
                 DataModule1.QueryRegister.Parameters.ParamByName('UN').Value := txtEnterUsername.Text;
-                DataModule1.QueryRegister.Parameters.ParamByName('PW').Value := PasswordDlg.GetHashS(txtEnterPassword.Text);
+                DataModule1.QueryRegister.Parameters.ParamByName('PW').Value := THashSHA2.GetHashString(txtEnterPassword.Text, THashSHA2.TSHA2Version.SHA256);
                 Datamodule1.QueryRegister.execSQL;
                 if  CreateDir('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User\' + txtEnterUsername.text) then
                 begin

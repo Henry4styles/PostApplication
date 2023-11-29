@@ -39,7 +39,7 @@ begin
         DataModule1.QueryLoginCheck.SQL.text := 'SELECT UserID FROM ETUserLoginData WHERE Username = :Username and Password = :Password';
         DataModule1.QueryLoginCheck.prepared;
         DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Username' ).Value := txtUsername.text;
-        DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Password' ).Value := GetHashS(txtPassword.text);
+        DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Password' ).Value := THashSHA2.GetHashString(txtPassword.Text, THashSHA2.TSHA2Version.SHA256);
         DataModule1.QueryLoginCheck.Open;
         if DataModule1.QueryLoginCheck.FieldByName('UserID').Value = NULL then
         begin

@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.117,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETHomepageLoggedIn.pas=</Transaction>
     <Transaction>1899.12.30 00:00:00.000.568,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETHomepageLoggedIn.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.836,C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\PassWord.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmLogin.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.073,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETRegister.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.464,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.318,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETDatamodule1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.117,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETHomepageLoggedIn.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.166,C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETMain.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.654,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.464,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.093,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.166,C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETMain.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.568,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETHomepageLoggedIn.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.273,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.073,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETRegister.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.318,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETDatamodule1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.404,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETSignUp.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETRegister.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.273,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.654,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.073,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETRegister.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.309,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.819,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas</Transaction>
@@ -21,16 +22,21 @@
     <Transaction>1899.12.30 00:00:00.000.836,C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\PassWord.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmLogin.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.023,=C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\PassWord.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.023,C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Project1.dproj=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\PrjETProgrammLogin.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.166,C:\Users\ma2056\Documents\Embarcadero\Studio\Projekte\Unit1.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmETMain.dfm</Transaction>
     <Transaction>2023.11.29 11:08:05.179,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
     <Transaction>2023.11.29 11:08:12.271,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas</Transaction>
     <Transaction>2023.11.29 11:11:44.070,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmProfileview.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.dfm</Transaction>
     <Transaction>2023.11.29 11:11:44.070,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmProfileview.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
-    <Transaction>2023.11.29 11:35:48.402,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmPostView.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas</Transaction>
     <Transaction>2023.11.29 11:35:48.402,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmPostView.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.dfm</Transaction>
+    <Transaction>2023.11.29 11:35:48.402,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmPostView.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit2.pas</Transaction>
     <Transaction>2023.11.29 11:44:12.354,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmProfileview.pas=</Transaction>
     <Transaction>2023.11.29 11:44:23.573,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmAccountView.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmPostView.pas</Transaction>
     <Transaction>2023.11.29 11:44:23.573,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmAccountView.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmPostView.dfm</Transaction>
+    <Transaction>2023.11.29 11:54:20.835,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
+    <Transaction>2023.11.29 11:54:36.362,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmPostview.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.dfm</Transaction>
+    <Transaction>2023.11.29 11:54:36.362,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmPostview.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
+    <Transaction>2023.11.29 12:06:13.030,=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
+    <Transaction>2023.11.29 12:06:50.654,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmMainLoggedin.dfm=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.dfm</Transaction>
+    <Transaction>2023.11.29 12:06:50.654,C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\UfrmMainLoggedin.pas=C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="UfrmETMain.pas"/>
@@ -43,5 +49,9 @@
     <File Path="UfrmETDatamodule1.dfm"/>
     <File Path="UfrmAccountView.pas"/>
     <File Path="UfrmAccountView.dfm"/>
+    <File Path="UfrmPostview.pas"/>
+    <File Path="UfrmPostview.dfm"/>
+    <File Path="UfrmMainLoggedin.pas"/>
+    <File Path="UfrmMainLoggedin.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

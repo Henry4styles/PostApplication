@@ -1,9 +1,9 @@
 object frmETHomepageLogout: TfrmETHomepageLogout
-  Left = 409
-  Top = 83
+  Left = 613
+  Top = 62
   Caption = 'Homepage'
   ClientHeight = 881
-  ClientWidth = 1026
+  ClientWidth = 759
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,29 +21,29 @@ object frmETHomepageLogout: TfrmETHomepageLogout
     Caption = 'Label2'
   end
   object Panel1: TPanel
-    Left = 8
-    Top = 23
-    Width = 617
+    Left = 40
+    Top = 47
+    Width = 673
     Height = 474
     TabOrder = 0
-    object Memo1: TMemo
-      Left = 48
-      Top = 40
-      Width = 521
-      Height = 313
-      BorderStyle = bsNone
-      Lines.Strings = (
-        'Memo1')
-      TabOrder = 0
+    object dblblFooter: TDBText
+      Left = 104
+      Top = 160
+      Width = 65
+      Height = 17
     end
-  end
-  object Panel2: TPanel
-    Left = 473
-    Top = 608
-    Width = 185
-    Height = 41
-    Caption = 'Panel2'
-    TabOrder = 1
+    object dblblHeader: TDBText
+      Left = 104
+      Top = 47
+      Width = 65
+      Height = 15
+    end
+    object dblblBody: TDBText
+      Left = 104
+      Top = 111
+      Width = 65
+      Height = 15
+    end
   end
   object MainMenu1: TMainMenu
     Left = 864

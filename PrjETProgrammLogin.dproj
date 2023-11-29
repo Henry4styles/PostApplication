@@ -119,6 +119,14 @@
             <Form>frmProfileView</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="UfrmPostview.pas">
+            <Form>frmPostView</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UfrmMainLoggedin.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
