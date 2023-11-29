@@ -8,8 +8,8 @@ uses
   System.Actions, Vcl.ActnList, System.Hash, Vcl.DBCtrls;
 
 type
+
   TfrmETHomepageLogout = class(TForm)
-    Label2: TLabel;
     Panel1: TPanel;
     MainMenu1: TMainMenu;
     MnuItmHomepage: TMenuItem;
@@ -73,4 +73,6 @@ begin
 
 end;
 
+
 end.
+

@@ -7,15 +7,22 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.ExtCtrls;
 
 type
+  TCommentvorlage = class(TObject)
+      dblblComment: TDBText;
+      btnReleaseComment: TButton;
+      txtComment: TEdit;
+    private
+        dest, v1, v2: integer;
+    public
+        constructor Create(dest, r1, r2: integer);
+    end;
+  TComment = class(TCommentvorlage);
   TfrmPostView = class(TForm)
     dblblHeader: TDBText;
     dblblBody: TDBText;
     dblblFooter: TDBText;
     PnlPost: TPanel;
-    PnlComment: TPanel;
-    Edit1: TEdit;
-    dblblComment: TDBText;
-    btnReleaseComment: TButton;
+    procedure pnlCommentClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
@@ -24,9 +31,26 @@ type
 
 var
   frmPostView: TfrmPostView;
-
+  Comment: TComment;
 implementation
+
 
 {$R *.dfm}
 
+procedure TfrmPostView.pnlCommentClick(Sender: TObject);
+begin
+
+end;
+
+{ TComment }
+
+constructor TCommentvorlage.Create;
+begin
+
+end;
+
 end.
+{Info für morgen:
+Basisklasse erstellen um diese mit ihren Objects zu vererben, und somit die einzelnen Comments zu createn
+
+}

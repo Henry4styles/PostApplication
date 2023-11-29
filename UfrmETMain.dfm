@@ -1,8 +1,8 @@
 object frmETHomepageLogout: TfrmETHomepageLogout
-  Left = 613
-  Top = 62
+  Left = 551
+  Top = 207
   Caption = 'Homepage'
-  ClientHeight = 881
+  ClientHeight = 706
   ClientWidth = 759
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,34 +13,27 @@ object frmETHomepageLogout: TfrmETHomepageLogout
   Menu = MainMenu1
   Position = poDesigned
   TextHeight = 15
-  object Label2: TLabel
-    Left = 280
-    Top = 2
-    Width = 34
-    Height = 15
-    Caption = 'Label2'
-  end
   object Panel1: TPanel
-    Left = 40
-    Top = 47
-    Width = 673
-    Height = 474
+    Left = 8
+    Top = 56
+    Width = 743
+    Height = 642
     TabOrder = 0
     object dblblFooter: TDBText
       Left = 104
-      Top = 160
+      Top = 360
       Width = 65
       Height = 17
     end
     object dblblHeader: TDBText
       Left = 104
-      Top = 47
+      Top = 55
       Width = 65
       Height = 15
     end
     object dblblBody: TDBText
       Left = 104
-      Top = 111
+      Top = 127
       Width = 65
       Height = 15
     end

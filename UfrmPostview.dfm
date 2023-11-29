@@ -37,35 +37,11 @@ object frmPostView: TfrmPostView
       Height = 15
     end
   end
-  object PnlComment: TPanel
+  object pnlComment: TPanel
     Left = 8
-    Top = 512
+    Top = 544
     Width = 689
-    Height = 153
+    Height = 121
     TabOrder = 1
-    object dblblComment: TDBText
-      Left = 64
-      Top = 95
-      Width = 65
-      Height = 15
-    end
-    object Edit1: TEdit
-      Left = 64
-      Top = 24
-      Width = 545
-      Height = 25
-      TabOrder = 0
-      TextHint = 'Write a comment'
-    end
-    object btnReleaseComment: TButton
-      Left = 64
-      Top = 55
-      Width = 105
-      Height = 25
-      Caption = 'publish comment'
-      DisabledImageName = 'btnpublishComment'
-      TabOrder = 1
-      Visible = False
-    end
   end
 end

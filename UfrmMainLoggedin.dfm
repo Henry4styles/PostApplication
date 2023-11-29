@@ -22,12 +22,9 @@ object Form1: TForm1
     object Postschreiben1: TMenuItem
       Caption = 'write a post'
     end
-    object MnuItmLogin: TMenuItem
-      Caption = 'sign in'
-    end
-    object MnuItmSignUp: TMenuItem
-      Caption = 'sign up'
-      ImageName = 'MnuItmSignUp'
+    object logout1: TMenuItem
+      Caption = 'logout'
+      OnClick = logout1Click
     end
   end
 end

@@ -69,6 +69,8 @@ begin
                     CreateDir('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User\' + txtEnterUsername.text + '\' + txtEnterUsername.text + 'Account');
                     CreateDir('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User\' + txtEnterUsername.text + '\' + txtEnterUsername.text + 'Posts');
                     ShowMessage('Registration successful!');
+                //The code here creates a directory 'user' in which two more directories named username + “account” and username + “posts”
+                //are created for the account details and postpart files.
 
                     self.Close;
                 end;

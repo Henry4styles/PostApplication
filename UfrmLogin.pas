@@ -11,14 +11,13 @@ type
   TPasswordDlg = class(TForm)
 
     lblUsername: TLabel;
-    txtUsername: TEdit;
     btnOK: TButton;
     btnCancel: TButton;
     lblPassword: TLabel;
     txtPassword: TEdit;
+    txtUsername: TEdit;
     procedure btnOKClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    function GetHashS(_string: string): string;
   private
     { Private-Deklarationen }
   public
@@ -35,48 +34,32 @@ implementation
 
 procedure TPasswordDlg.btnOKClick(Sender: TObject);
 begin
-
-        DataModule1.QueryLoginCheck.SQL.text := 'SELECT UserID FROM ETUserLoginData WHERE Username = :Username and Password = :Password';
-        DataModule1.QueryLoginCheck.prepared;
-        DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Username' ).Value := txtUsername.text;
-        DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Password' ).Value := THashSHA2.GetHashString(txtPassword.Text, THashSHA2.TSHA2Version.SHA256);
-        DataModule1.QueryLoginCheck.Open;
-        if DataModule1.QueryLoginCheck.FieldByName('UserID').Value = NULL then
-        begin
-           ShowMessage('Wrong Password or Username!');
-
-        end else
-        begin
-            DataModule1.QueryLoginCheck.FieldByName('UserID').Value;
-            btnOK.ModalResult:=mrOK;
-            Self.Close;
-//
-        end;
-
-
-
-
-
-end;
-
-function TPasswordDlg.GetHashS(_string: string): string;
-var
-    sha: TIdHashSHA256;
-begin
-    if TIdHashSHA256.IsAvailable then
+    DataModule1.QueryLoginCheck.SQL.text := 'SELECT UserID FROM ETUserLoginData WHERE Username = :Username and Password = :Password';
+    DataModule1.QueryLoginCheck.prepared;
+    DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Username' ).Value := txtUsername.text;
+    DataModule1.QueryLoginCheck.Parameters.ParamByName( 'Password' ).Value := THashSHA2.GetHashString(txtPassword.Text, THashSHA2.TSHA2Version.SHA256);
+    DataModule1.QueryLoginCheck.Open;
+    if DataModule1.QueryLoginCheck.FieldByName('UserID').Value = NULL then
     begin
-        sha:= TIdHashSHA256.Create;
-        try
-            Result:= sha.HashStringAsHex(_string);
-        finally
-            sha.Free;
-        end;
+       btnOK.ModalResult:=mrNone;
+       ShowMessage('Wrong Password or Username!');
+       txtPassword.Clear;
+    end else
+    begin
+        DataModule1.QueryLoginCheck.FieldByName('UserID').Value;
+        btnOK.ModalResult:=mrOK;
+        txtUsername.clear;
+        txtPassword.Clear;
+        Self.Close;
+
     end;
 end;
 
+
+
 procedure TPasswordDlg.FormShow(Sender: TObject);
 begin
-    ShowMessage(GetHashS('hallo'));
+
     txtUsername.clear;
     txtPassword.Clear;
 end;

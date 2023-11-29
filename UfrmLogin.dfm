@@ -3,8 +3,8 @@ object PasswordDlg: TPasswordDlg
   Top = 579
   BorderStyle = bsDialog
   Caption = 'Passwort-Dialog'
-  ClientHeight = 152
-  ClientWidth = 233
+  ClientHeight = 158
+  ClientWidth = 237
   Color = clBtnFace
   ParentFont = True
   Position = poDesigned
@@ -24,15 +24,6 @@ object PasswordDlg: TPasswordDlg
     Height = 15
     Caption = 'Passwort eingeben:'
   end
-  object txtUsername: TEdit
-    Left = 8
-    Top = 36
-    Width = 217
-    Height = 23
-    ImeName = 'German'
-    PasswordChar = '*'
-    TabOrder = 0
-  end
   object btnOK: TButton
     Left = 69
     Top = 115
@@ -41,7 +32,7 @@ object PasswordDlg: TPasswordDlg
     Caption = 'OK'
     Default = True
     DisabledImageName = 'btnOK'
-    TabOrder = 1
+    TabOrder = 2
     OnClick = btnOKClick
   end
   object btnCancel: TButton
@@ -53,7 +44,7 @@ object PasswordDlg: TPasswordDlg
     Caption = 'Abbrechen'
     DisabledImageName = 'btnCancel'
     ModalResult = 2
-    TabOrder = 2
+    TabOrder = 3
   end
   object txtPassword: TEdit
     Left = 8
@@ -62,6 +53,14 @@ object PasswordDlg: TPasswordDlg
     Height = 23
     ImeName = 'German'
     PasswordChar = '*'
-    TabOrder = 3
+    TabOrder = 1
+  end
+  object txtUsername: TEdit
+    Left = 8
+    Top = 36
+    Width = 217
+    Height = 23
+    ImeName = 'German'
+    TabOrder = 0
   end
 end
