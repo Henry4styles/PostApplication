@@ -3,8 +3,8 @@ object PasswordDlg: TPasswordDlg
   Top = 579
   BorderStyle = bsDialog
   Caption = 'Passwort-Dialog'
-  ClientHeight = 158
-  ClientWidth = 237
+  ClientHeight = 152
+  ClientWidth = 233
   Color = clBtnFace
   ParentFont = True
   Position = poDesigned

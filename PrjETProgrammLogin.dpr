@@ -8,7 +8,8 @@ uses
   UfrmETDatamodule1 in 'UfrmETDatamodule1.pas' {DataModule1: TDataModule},
   UfrmAccountView in 'UfrmAccountView.pas' {frmProfileView},
   UfrmPostview in 'UfrmPostview.pas' {frmPostView},
-  UfrmMainLoggedin in 'UfrmMainLoggedin.pas' {Form1};
+  UfrmMainLoggedin in 'UfrmMainLoggedin.pas' {Form1},
+  UfrmPostCreater in 'UfrmPostCreater.pas' {PostCreater};
 
 {$R *.res}
 
@@ -22,5 +23,6 @@ begin
   Application.CreateForm(TfrmProfileView, frmProfileView);
   Application.CreateForm(TfrmPostView, frmPostView);
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TPostCreater, PostCreater);
   Application.Run;
 end.

@@ -8,10 +8,14 @@ uses
 type
   TDataModule1 = class(TDataModule)
     QueryRegister: TADOQuery;
-    DataSource1: TDataSource;
+    DSrcRegister: TDataSource;
     ADOConnection1: TADOConnection;
     QueryLoginCheck: TADOQuery;
     QueryLoadPost: TADOQuery;
+    QueryComment: TADOQuery;
+    QueryPost: TADOQuery;
+    DSrcComment: TDataSource;
+    DSrcPost: TDataSource;
   private
     { Private-Deklarationen }
   public

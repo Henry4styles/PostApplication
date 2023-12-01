@@ -1,5 +1,5 @@
 object frmETRegister: TfrmETRegister
-  Left = 572
+  Left = 654
   Top = 497
   Caption = 'Registration'
   ClientHeight = 243

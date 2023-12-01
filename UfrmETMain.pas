@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, UfrmLogin, UfrmETSignUp, UfrmETDatamodule1,
-  System.Actions, Vcl.ActnList, System.Hash, Vcl.DBCtrls;
+  System.Actions, Vcl.ActnList, System.Hash, Vcl.DBCtrls, UfrmPostView;
 
 type
 
@@ -24,11 +24,13 @@ type
     dblblFooter: TDBText;
     dblblHeader: TDBText;
     dblblBody: TDBText;
+    Button1: TButton;
     procedure MnuItmHomepageClick(Sender: TObject);
     procedure actShowHomepageExecute(Sender: TObject);
     procedure actShowLoginFrmExecute(Sender: TObject);
     procedure actShowRegisterFrmExecute(Sender: TObject);
     procedure Postschreiben1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
 
   private
     { Private-Deklarationen }
@@ -60,6 +62,12 @@ begin
     UfrmETSignUp.frmETRegister.ShowModal;
 end;
 
+procedure TfrmETHomepageLogout.Button1Click(Sender: TObject);
+begin
+   UfrmPostView.frmPostView.ShowModal;
+   UfrmPostView.TComment.Create();
+end;
+
 procedure TfrmETHomepageLogout.MnuItmHomepageClick(Sender: TObject);
 begin
     //PasswordDlg:= PasswordDlg.Create(PasswordDlg);
@@ -69,6 +77,7 @@ end;
 
 procedure TfrmETHomepageLogout.Postschreiben1Click(Sender: TObject);
 begin
+    Passworddlg.Eingabe := 1;
     Passworddlg.showModal;
 
 end;

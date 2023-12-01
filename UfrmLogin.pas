@@ -5,7 +5,7 @@ interface
 uses
      Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
      Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, UfrmETDatamodule1,
-     Vcl.Buttons, System.Hash, IdHashSha;
+     Vcl.Buttons, System.Hash, IdHashSha, UfrmPostCreater;
 
 type
   TPasswordDlg = class(TForm)
@@ -21,7 +21,7 @@ type
   private
     { Private-Deklarationen }
   public
-
+    Eingabe: integer;
   end;
 
 var
@@ -30,6 +30,8 @@ var
 implementation
 
 {$R *.dfm}
+
+
 
 
 procedure TPasswordDlg.btnOKClick(Sender: TObject);
@@ -50,10 +52,16 @@ begin
         btnOK.ModalResult:=mrOK;
         txtUsername.clear;
         txtPassword.Clear;
+        if Eingabe = 1 then
+        begin
+            //UfrmPostCreater.PostCreater.Create(Self);
+            UfrmPostCreater.PostCreater.showModal;
+        end;
         Self.Close;
+        //Self.Free;
+    end;
 
     end;
-end;
 
 
 
