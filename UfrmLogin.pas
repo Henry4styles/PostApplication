@@ -5,7 +5,7 @@ interface
 uses
      Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
      Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, UfrmETDatamodule1,
-     Vcl.Buttons, System.Hash, IdHashSha, UfrmPostCreater;
+     Vcl.Buttons, System.Hash, IdHashSha, UfrmPostCreater,UfrmMainLoggedin;
 
 type
   TPasswordDlg = class(TForm)
@@ -21,7 +21,8 @@ type
   private
     { Private-Deklarationen }
   public
-    Eingabe: integer;
+    Eingabe: boolean;
+    _UserID :string;
   end;
 
 var
@@ -43,28 +44,26 @@ begin
     DataModule1.QueryLoginCheck.Open;
     if DataModule1.QueryLoginCheck.FieldByName('UserID').Value = NULL then
     begin
-       btnOK.ModalResult:=mrNone;
-       ShowMessage('Wrong Password or Username!');
-       txtPassword.Clear;
+        btnOK.ModalResult:=mrNone;
+        ShowMessage('Wrong Password or Username!');
+        txtPassword.Clear;
     end else
     begin
+        _UserID := DataModule1.QueryLoginCheck.FieldByName('UserID').Value;
         DataModule1.QueryLoginCheck.FieldByName('UserID').Value;
+        UfrmPostCreater.PostCreater.User := txtUsername.Text;
         btnOK.ModalResult:=mrOK;
         txtUsername.clear;
         txtPassword.Clear;
-        if Eingabe = 1 then
+        if Eingabe then
         begin
-            //UfrmPostCreater.PostCreater.Create(Self);
             UfrmPostCreater.PostCreater.showModal;
         end;
+
+        frmMainLoggedin.showModal;
         Self.Close;
-        //Self.Free;
     end;
-
-    end;
-
-
-
+end;
 procedure TPasswordDlg.FormShow(Sender: TObject);
 begin
 

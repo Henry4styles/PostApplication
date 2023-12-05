@@ -55,6 +55,7 @@ end;
 procedure TfrmETHomepageLogout.actShowLoginFrmExecute(Sender: TObject);
 begin
     PasswordDlg.ShowModal;
+    Passworddlg.Eingabe := false;
 end;
 
 procedure TfrmETHomepageLogout.actShowRegisterFrmExecute(Sender: TObject);
@@ -65,7 +66,7 @@ end;
 procedure TfrmETHomepageLogout.Button1Click(Sender: TObject);
 begin
    UfrmPostView.frmPostView.ShowModal;
-   UfrmPostView.TComment.Create();
+   //UfrmPostView.TComment.Create();
 end;
 
 procedure TfrmETHomepageLogout.MnuItmHomepageClick(Sender: TObject);
@@ -77,11 +78,9 @@ end;
 
 procedure TfrmETHomepageLogout.Postschreiben1Click(Sender: TObject);
 begin
-    Passworddlg.Eingabe := 1;
+    Passworddlg.Eingabe := true;
     Passworddlg.showModal;
 
 end;
-
-
 end.
 

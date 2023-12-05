@@ -115,7 +115,7 @@ object frmProfileView: TfrmProfileView
     Left = 271
     Top = 219
     Width = 444
-    Height = 104
+    Height = 23
     TabOrder = 2
     Visible = False
   end

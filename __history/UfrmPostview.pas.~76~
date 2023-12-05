@@ -1,0 +1,120 @@
+unit UfrmPostview;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.ExtCtrls,
+  Vcl.Mask, UfrmETDatamodule1;
+
+type
+  TfrmPostView = class(TForm)
+    dblblHeader: TDBText;
+    dblblBody: TDBText;
+    dblblFooter: TDBText;
+    PnlPost: TPanel;
+    Button1: TButton;
+    DBEdit1: TDBEdit;
+    lblComment: TLabel;
+    btnPublishComment: TButton;
+    pnlCommentcreate: TPanel;
+    Panel1: TPanel;
+    ScrollBar1: TScrollBar;
+    Panel2: TPanel;
+    procedure Button1Click(Sender: TObject);
+    procedure DBEdit1Enter(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure ScrollBar1Change(Sender: TObject);
+  private
+    { Private-Deklarationen }
+  public
+    _PostID: Integer;
+    pnlComment: TPanel;
+    lblNameComment: TLabel;
+    label2: TLabel;
+    comment, name: string;
+  end;
+
+var
+  frmPostView: TfrmPostView;
+implementation
+
+
+{$R *.dfm}
+
+procedure TfrmPostView.Button1Click(Sender: TObject);
+var Panel :TPanel;
+
+begin
+    panel:= TPanel.Create(Self);
+    panel.Parent:= frmPostView;
+    panel.Top:= 300;
+    panel.Left := 300;
+    panel.Width:= 500;
+    panel.Height:= 500;
+end;
+
+
+
+procedure TfrmPostView.DBEdit1Enter(Sender: TObject);
+begin
+   btnPublishcomment.visible := true;
+end;
+
+procedure TfrmPostView.FormShow(Sender: TObject);
+var
+    i: integer;
+
+begin
+    _PostID := 1;
+    UfrmETDatamodule1.DataModule1.QueryComment.SQL.Text := 'SELECT * FROM ETComments WHERE PostID = ' + _PostID.ToString;
+    UfrmETDatamodule1.DataModule1.QueryComment.Open;
+
+    if not UfrmETDatamodule1.DataModule1.QueryComment.RecordCount < 1 then
+    begin
+
+        for i := 1 to UfrmETDatamodule1.DataModule1.QueryComment.RecordCount do
+        begin
+            //UfrmETDatamodule1.DataModule1.QueryComment.SQL.text := 'SELECT * FROM ETUserLoginData';
+            pnlComment := Tpanel.Create(Self);
+            pnlComment.Parent := frmPostView.Panel2;
+            pnlComment.top := (i * 150) - 140;//+ 450;
+            pnlComment.Width := 660;
+            pnlComment.Height := 100;
+            pnlComment.Left := 10;
+
+            lblNameComment := Tlabel.Create(Self);
+            lblNameComment.Parent := pnlComment;
+            lblNameComment.top := 20; //+ 460;
+            lblNameComment.Left := 15;
+            lblNameComment.Width := 650;
+            lblNameComment.Height := 20;
+            lblNameComment.Caption := 'Test';
+
+            label2 := Tlabel.Create(Self);
+            label2.Parent := pnlComment;
+            label2.top := 40;
+            label2.Width := 660;
+            label2.Height := 60;
+            label2.Left := 15;
+            label2.Caption := 'ABCDE';
+
+        end;
+        Scrollbar1.Max := UfrmETDatamodule1.DataModule1.QueryComment.RecordCount * 3;
+    end;
+
+end;
+
+procedure TfrmPostView.ScrollBar1Change(Sender: TObject);
+begin
+    frmPostView.Panel2.Top := ScrollBar1.Position * -25;
+end;
+
+{ TComment }
+
+
+end.
+
+//Info für morgen:
+//Basisklasse erstellen um diese mit ihren Objects zu vererben, und somit die einzelnen Comments zu createn
+

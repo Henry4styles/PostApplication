@@ -9,19 +9,19 @@ object PasswordDlg: TPasswordDlg
   ParentFont = True
   Position = poDesigned
   OnShow = FormShow
-  TextHeight = 15
+  TextHeight = 20
   object lblUsername: TLabel
     Left = 8
     Top = 15
-    Width = 138
-    Height = 15
+    Width = 172
+    Height = 20
     Caption = 'Benutzernamen eingeben:'
   end
   object lblPassword: TLabel
     Left = 8
     Top = 65
-    Width = 102
-    Height = 15
+    Width = 126
+    Height = 20
     Caption = 'Passwort eingeben:'
   end
   object btnOK: TButton
@@ -50,7 +50,7 @@ object PasswordDlg: TPasswordDlg
     Left = 8
     Top = 86
     Width = 217
-    Height = 23
+    Height = 28
     ImeName = 'German'
     PasswordChar = '*'
     TabOrder = 1
@@ -59,7 +59,7 @@ object PasswordDlg: TPasswordDlg
     Left = 8
     Top = 36
     Width = 217
-    Height = 23
+    Height = 28
     ImeName = 'German'
     TabOrder = 0
   end

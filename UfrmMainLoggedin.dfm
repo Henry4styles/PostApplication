@@ -1,8 +1,8 @@
-object Form1: TForm1
+object frmMainLoggedin: TfrmMainLoggedin
   Left = 592
   Top = 207
-  Caption = 'Form1'
-  ClientHeight = 562
+  Caption = 'frmMainLoggedin'
+  ClientHeight = 567
   ClientWidth = 723
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

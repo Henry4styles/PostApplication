@@ -34,7 +34,6 @@ implementation
 
 procedure TPostCreater.btnSaveClick(Sender: TObject);
 begin
-    User := 'TimBre';
     CreateDir('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User/' + User + '/' + User + 'Posts/' + Edit1.Text);
     MemHeader.lines.savetofile('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User/' + User + '/' + User + 'Posts/' + Edit1.Text +  '/Header.txt');
     MemBody.lines.savetofile('C:\Users\ma2056\Desktop\Beispielordner\ProgrammLogin\User/' + User + '/' + User + 'Posts/' + Edit1.Text + '/Body.txt');

@@ -2,7 +2,7 @@ object frmETHomepageLogout: TfrmETHomepageLogout
   Left = 551
   Top = 207
   Caption = 'Homepage'
-  ClientHeight = 706
+  ClientHeight = 711
   ClientWidth = 759
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,9 +15,9 @@ object frmETHomepageLogout: TfrmETHomepageLogout
   TextHeight = 15
   object Panel1: TPanel
     Left = 8
-    Top = 56
+    Top = 64
     Width = 743
-    Height = 642
+    Height = 481
     TabOrder = 0
     object dblblFooter: TDBText
       Left = 104

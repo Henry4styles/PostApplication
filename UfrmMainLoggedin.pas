@@ -4,10 +4,10 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, UfrmETMain;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
 
 type
-  TForm1 = class(TForm)
+  TfrmMainLoggedin = class(TForm)
     MainMenu1: TMainMenu;
     MnuItmHomepage: TMenuItem;
     Postschreiben1: TMenuItem;
@@ -20,16 +20,18 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmMainLoggedin: TfrmMainLoggedin;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.logout1Click(Sender: TObject);
+
+
+procedure TfrmMainLoggedin.logout1Click(Sender: TObject);
 begin
     ShowMessage('Logged out Successfuly!');
-    UfrmETMain.frmETHomepageLogout.ShowModal;
+
 
     Self.Close;
 end;

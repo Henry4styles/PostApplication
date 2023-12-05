@@ -1,0 +1,98 @@
+﻿unit UfrmPostview;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.ExtCtrls,
+  Vcl.Mask, UfrmETDatamodule1;
+
+type
+  TfrmPostView = class(TForm)
+    dblblHeader: TDBText;
+    dblblBody: TDBText;
+    dblblFooter: TDBText;
+    PnlPost: TPanel;
+    Button1: TButton;
+    DBEdit1: TDBEdit;
+    lblComment: TLabel;
+    btnPublishComment: TButton;
+    Panel1: TPanel;
+    lblCommentNameUser: TLabel;
+    lblComment1: TLabel;
+    procedure pnlCommentClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure DBEdit1Enter(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private-Deklarationen }
+  public
+    _PostID: Integer;
+  end;
+
+var
+  frmPostView: TfrmPostView;
+implementation
+
+
+{$R *.dfm}
+
+procedure TfrmPostView.Button1Click(Sender: TObject);
+var Panel :TPanel;
+
+begin
+    panel:= TPanel.Create(Self);
+    panel.Parent:= frmPostView;
+    panel.Top:= 300;
+    panel.Left := 300;
+    panel.Width:= 500;
+    panel.Height:= 500;
+end;
+
+
+
+procedure TfrmPostView.DBEdit1Enter(Sender: TObject);
+begin
+   btnPublishcomment.visible := true;
+end;
+
+procedure TfrmPostView.FormShow(Sender: TObject);
+var
+    i: integer;
+    pnlComment: TPanel;
+    label1: TLabel;
+    label2: TLabel;
+begin
+
+    UfrmETDatamodule1.DataModule1.QueryComment.SQL.Text := 'SELECT * FROM ETComments WHERE PostID = ' + _PostID.ToString;
+    UfrmETDatamodule1.DataModule1.QueryComment.Open;
+
+    if not UfrmETDatamodule1.DataModule1.QueryComment.RecordCount < 1 then
+    begin
+
+        for i := 1 to UfrmETDatamodule1.DataModule1.QueryComment.RecordCount do
+        begin
+            //UfrmETDatamodule1.DataModule1.QueryComment.SQL.text := 'SELECT * FROM ETUserLoginData';
+            panel1 := Tpanel.Create(Self);
+            panel1.Parent := frmPostView;
+            panel1.top := i * 100;
+            panel1.Width := 325;
+            panel1.Height := 100;
+            panel1.Caption := 'Test';
+        end;
+    end;
+end;
+
+procedure TfrmPostView.pnlCommentClick(Sender: TObject);
+begin
+
+end;
+
+{ TComment }
+
+
+end.
+
+//Info für morgen:
+//Basisklasse erstellen um diese mit ihren Objects zu vererben, und somit die einzelnen Comments zu createn
+
