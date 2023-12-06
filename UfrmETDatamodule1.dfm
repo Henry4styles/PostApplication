@@ -1,7 +1,6 @@
 object DataModule1: TDataModule1
-  Height = 515
-  Width = 818
-  PixelsPerInch = 120
+  Height = 412
+  Width = 654
   object QueryRegister: TADOQuery
     Active = True
     Connection = ADOConnection1
@@ -9,13 +8,13 @@ object DataModule1: TDataModule1
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM ETUserLoginData')
-    Left = 250
-    Top = 370
+    Left = 200
+    Top = 296
   end
   object DSrcRegister: TDataSource
     DataSet = QueryRegister
-    Left = 100
-    Top = 230
+    Left = 80
+    Top = 184
   end
   object ADOConnection1: TADOConnection
     Connected = True
@@ -26,14 +25,14 @@ object DataModule1: TDataModule1
       '";Access Token=""'
     LoginPrompt = False
     Provider = 'MSOLEDBSQL.1'
-    Left = 120
-    Top = 370
+    Left = 96
+    Top = 296
   end
   object QueryLoginCheck: TADOQuery
     Connection = ADOConnection1
     Parameters = <>
-    Left = 390
-    Top = 370
+    Left = 312
+    Top = 296
   end
   object QueryLoadPost: TADOQuery
     Connection = ADOConnection1
@@ -42,8 +41,8 @@ object DataModule1: TDataModule1
     Parameters = <>
     SQL.Strings = (
       'SELECT * FROM ETUserLoginData')
-    Left = 540
-    Top = 370
+    Left = 432
+    Top = 296
   end
   object QueryComment: TADOQuery
     Active = True
@@ -53,8 +52,8 @@ object DataModule1: TDataModule1
     SQL.Strings = (
       'SELECT * FROM ETComments '
       '')
-    Left = 350
-    Top = 60
+    Left = 280
+    Top = 48
   end
   object QueryPost: TADOQuery
     Active = True
@@ -65,17 +64,36 @@ object DataModule1: TDataModule1
     SQL.Strings = (
       'SELECT * FROM ETPost'
       '')
-    Left = 500
-    Top = 80
+    Left = 400
+    Top = 64
   end
   object DSrcComment: TDataSource
     DataSet = QueryComment
-    Left = 130
-    Top = 60
+    Left = 104
+    Top = 48
   end
   object DSrcPost: TDataSource
     DataSet = QueryPost
-    Left = 120
-    Top = 150
+    Left = 96
+    Top = 120
+  end
+  object dsrcAddPost: TDataSource
+    DataSet = QueryPost
+    Left = 240
+    Top = 144
+  end
+  object QueryAddPost: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    DataSource = dsrcAddPost
+    Parameters = <>
+    SQL.Strings = (
+      
+        'SELECT * FROM ETPost LEFT JOIN ETUserLoginData  ON ETPost.UserID' +
+        ' = ETUserLoginData.UserID'
+      '')
+    Left = 368
+    Top = 160
   end
 end

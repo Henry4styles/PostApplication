@@ -2,7 +2,7 @@ object frmMainLoggedin: TfrmMainLoggedin
   Left = 592
   Top = 207
   Caption = 'frmMainLoggedin'
-  ClientHeight = 567
+  ClientHeight = 572
   ClientWidth = 723
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET

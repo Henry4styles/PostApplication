@@ -99,7 +99,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UfrmETMain.pas">
-            <Form>frmETHomepageLogout</Form>
+            <Form>frmETHomepage</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UfrmLogin.pas">
@@ -121,10 +121,6 @@
         </DCCReference>
         <DCCReference Include="UfrmPostview.pas">
             <Form>frmPostView</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UfrmMainLoggedin.pas">
-            <Form>frmMainLoggedin</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="UfrmPostCreater.pas">
@@ -986,6 +982,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>

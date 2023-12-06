@@ -5,7 +5,7 @@ interface
 uses
      Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
      Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, UfrmETDatamodule1,
-     Vcl.Buttons, System.Hash, IdHashSha, UfrmPostCreater,UfrmMainLoggedin;
+     Vcl.Buttons, System.Hash, IdHashSha, UfrmPostCreater;
 
 type
   TPasswordDlg = class(TForm)
@@ -18,11 +18,13 @@ type
     txtUsername: TEdit;
     procedure btnOKClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnCancelClick(Sender: TObject);
   private
     { Private-Deklarationen }
   public
     Eingabe: boolean;
     _UserID :string;
+    loggedin :boolean;
   end;
 
 var
@@ -34,6 +36,14 @@ implementation
 
 
 
+
+procedure TPasswordDlg.btnCancelClick(Sender: TObject);
+begin
+    loggedin := false;
+
+    btnCancel.ModalResult := mrNone;
+    self.Close;
+end;
 
 procedure TPasswordDlg.btnOKClick(Sender: TObject);
 begin
@@ -47,20 +57,22 @@ begin
         btnOK.ModalResult:=mrNone;
         ShowMessage('Wrong Password or Username!');
         txtPassword.Clear;
+        loggedin := false;
     end else
     begin
         _UserID := DataModule1.QueryLoginCheck.FieldByName('UserID').Value;
         DataModule1.QueryLoginCheck.FieldByName('UserID').Value;
         UfrmPostCreater.PostCreater.User := txtUsername.Text;
+        loggedin := true;
         btnOK.ModalResult:=mrOK;
         txtUsername.clear;
         txtPassword.Clear;
+        UfrmPostCreater.PostCreater._UserID := _UserID;
         if Eingabe then
         begin
             UfrmPostCreater.PostCreater.showModal;
         end;
 
-        frmMainLoggedin.showModal;
         Self.Close;
     end;
 end;
@@ -69,6 +81,7 @@ begin
 
     txtUsername.clear;
     txtPassword.Clear;
+    loggedin := false;
 end;
 
 end.

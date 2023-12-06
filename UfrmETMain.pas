@@ -5,12 +5,11 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, UfrmLogin, UfrmETSignUp, UfrmETDatamodule1,
-  System.Actions, Vcl.ActnList, System.Hash, Vcl.DBCtrls, UfrmPostView;
+  System.Actions, Vcl.ActnList, System.Hash, Vcl.DBCtrls, UfrmPostView, UfrmPostCreater;
 
 type
 
-  TfrmETHomepageLogout = class(TForm)
-    Panel1: TPanel;
+  TfrmETHomepage = class(TForm)
     MainMenu1: TMainMenu;
     MnuItmHomepage: TMenuItem;
     MnuItmLogin: TMenuItem;
@@ -21,66 +20,206 @@ type
     actShowRegisterFrm: TAction;
     actRegister: TAction;
     Postschreiben1: TMenuItem;
-    dblblFooter: TDBText;
-    dblblHeader: TDBText;
-    dblblBody: TDBText;
-    Button1: TButton;
+    pnlInhalt: TPanel;
+    ScrollBar1: TScrollBar;
+    pnlInhalt2: TPanel;
     procedure MnuItmHomepageClick(Sender: TObject);
     procedure actShowHomepageExecute(Sender: TObject);
     procedure actShowLoginFrmExecute(Sender: TObject);
     procedure actShowRegisterFrmExecute(Sender: TObject);
     procedure Postschreiben1Click(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
-
+    function GetPostHeader(_integer: integer):string;
+    function GetPostBody(_integer: integer):string;
+    function GetPostFooter(_integer: integer):string;
+    procedure ScrollBar1Change(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Buttonclick(Sender: TObject);
   private
-    { Private-Deklarationen }
+    pnlPost :TPanel;
+    MemHeader :TMemo;
+    MemBody :TMemo;
+    memFooter :TMemo;
+    lblUsername: TLabel;
+    lblTitle: TLabel;
   public
-
+    m_PostID: string;
     { Public-Deklarationen }
   end;
 
 var
-  frmETHomepageLogout: TfrmETHomepageLogout;
+  frmETHomepage: TfrmETHomepage;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmETHomepageLogout.actShowHomepageExecute(Sender: TObject);
+procedure TfrmETHomepage.actShowHomepageExecute(Sender: TObject);
 begin
-    frmETHomepageLogout.show();
+    UfrmLogin.PasswordDlg.loggedin := false;
 
 end;
 
-procedure TfrmETHomepageLogout.actShowLoginFrmExecute(Sender: TObject);
+procedure TfrmETHomepage.actShowLoginFrmExecute(Sender: TObject);
 begin
     PasswordDlg.ShowModal;
     Passworddlg.Eingabe := false;
 end;
 
-procedure TfrmETHomepageLogout.actShowRegisterFrmExecute(Sender: TObject);
+procedure TfrmETHomepage.actShowRegisterFrmExecute(Sender: TObject);
 begin
     UfrmETSignUp.frmETRegister.ShowModal;
 end;
 
-procedure TfrmETHomepageLogout.Button1Click(Sender: TObject);
+
+procedure TfrmETHomepage.Buttonclick(Sender: TObject);
 begin
-   UfrmPostView.frmPostView.ShowModal;
-   //UfrmPostView.TComment.Create();
+    m_PostID := PnlPost.Hint;
+    if Ufrmlogin.PasswordDlg.loggedin = false then
+    begin
+        UfrmLogin.PasswordDlg.ShowModal;
+    end else
+    begin
+    UfrmPostView.frmPostView._PostID := m_PostID.tointeger;
+    UfrmPostView.frmPostView.ShowModal;
+    end;
+
+
 end;
 
-procedure TfrmETHomepageLogout.MnuItmHomepageClick(Sender: TObject);
+procedure TfrmETHomepage.FormShow(Sender: TObject);
+var
+    i: integer;
+
+begin
+   UfrmETDatamodule1.DataModule1.QueryPost.SQL.Text := 'SELECT * FROM ETPost LEFT JOIN ETUserLoginData ON ETPost.UserID = ETUserLoginData.UserID ';
+   UfrmETDatamodule1.DataModule1.QueryPost.Open;
+
+
+    if not UfrmETDatamodule1.DataModule1.QueryPost.RecordCount < 1 then
+    begin
+        UfrmETDatamodule1.DataModule1.QueryPost.first;
+        for i := 1 to UfrmETDatamodule1.DataModule1.QueryPost.RecordCount do
+        begin
+            //UfrmETDatamodule1.DataModule1.QueryPost.SQL.text := 'SELECT * FROM ETUserLoginData';
+            pnlPost := Tpanel.Create(Self);
+            pnlPost.Parent := frmETHomepage.pnlInhalt2;
+            pnlPost.top := (i * 530) - 490;//+ 450;
+            pnlPost.Width := 700;
+            pnlPost.Height := 550;
+            pnlPost.Left := 10;
+
+//            procedure TfrmETHomepageLogout.pnlPost.onClick(sender: TObject);
+            PnlPost.Hint :=  UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('PostID').Asstring;
+            pnlPost.OnClick:= Buttonclick;
+
+
+            memHeader := TMemo.Create(Self);
+            memHeader.Parent := pnlPost;
+            memHeader.top := 70; //+ 460;
+            memHeader.Left := 15;
+            memHeader.Width := 670;
+            memHeader.Height := 100;
+            memHeader.lines.LoadFromFile(GetPostHeader(i));
+            memHeader.ReadOnly := true;
+
+            lblUsername := Tlabel.Create(Self);
+            lblUsername.Parent := pnlPost;
+            lblUsername.Top := 5;
+            lblUsername.Left := 15;
+            lblUsername.Width := 670;
+            lblUsername.Height := 20;
+            lblUsername.Caption := UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('Username').Asstring;
+            lblUsername.Font.Size := 18;
+
+            lblTitle := TLabel.create(Self);
+            lblTitle.Parent := pnlPost;
+            lblTitle.Top := 30;
+            lblTitle.Left := 15;
+            lblTitle.Width := 670;
+            lblTitle.Height := 20;
+            lblTitle.Caption := UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('PostTitle').Asstring;
+            lblTitle.Font.Size := 18;
+
+            memBody := TMemo.Create(Self);
+            memBody.Parent := pnlPost;
+            memBody.top := 180;
+            memBody.Width := 670;
+            memBody.Height := 200;
+            memBody.Left := 15;
+            membody.Lines.loadFromFile(GetPostBody(i));
+            membody.ReadOnly := true;
+
+            memfooter := TMemo.Create(Self);
+            memfooter.Parent := pnlPost;
+            memfooter.top := 400;
+            memfooter.Width := 670;
+            memfooter.Height := 100;
+            memfooter.Left := 15;
+            memfooter.lines.LoadFromFile(GetPostFooter(i));
+            memfooter.ReadOnly := true;
+
+        end;
+        Scrollbar1.Max := UfrmETDatamodule1.DataModule1.QueryPost.RecordCount * 3;
+    end;
+
+end;
+
+function TfrmETHomepage.GetPostBody(_integer: integer): string;
+begin
+    result := UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('HeadlinePostLink').asstring;
+end;
+
+
+
+function TfrmETHomepage.GetPostFooter(_integer: integer): string;
+begin
+    result := UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('HeadlinePostLink').Asstring;
+
+end;
+
+function TfrmETHomepage.GetPostHeader(_integer: integer): string;
+begin
+    if _integer <> 1 then
+    begin
+        UfrmETDatamodule1.DataModule1.QueryPost.Next;
+
+        result := UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('HeadlinePostLink').Asstring;
+
+    end else
+    begin
+        result := UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('HeadlinePostLink').Asstring;
+    end;
+end;
+
+procedure TfrmETHomepage.MnuItmHomepageClick(Sender: TObject);
 begin
     //PasswordDlg:= PasswordDlg.Create(PasswordDlg);
 end;
 
 
 
-procedure TfrmETHomepageLogout.Postschreiben1Click(Sender: TObject);
+procedure TfrmETHomepage.Postschreiben1Click(Sender: TObject);
 begin
-    Passworddlg.Eingabe := true;
-    Passworddlg.showModal;
+    if UfrmLogin.PasswordDlg.loggedin = true then
+    begin
+        UfrmPostCreater.PostCreater.ShowModal;
+
+    end else
+    begin
+        Passworddlg.showModal;
+        if UfrmLogin.PasswordDlg.loggedin = true then
+        begin
+            UfrmPostCreater.PostCreater.ShowModal;
+
+        end;
+    end;
 
 end;
+procedure TfrmETHomepage.ScrollBar1Change(Sender: TObject);
+begin
+        frmETHomepage.pnlInhalt2.top := ScrollBar1.Position * -100;
+end;
+
+
 end.
 

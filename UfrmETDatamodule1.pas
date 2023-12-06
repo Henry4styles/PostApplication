@@ -16,6 +16,8 @@ type
     QueryPost: TADOQuery;
     DSrcComment: TDataSource;
     DSrcPost: TDataSource;
+    dsrcAddPost: TDataSource;
+    QueryAddPost: TADOQuery;
   private
     { Private-Deklarationen }
   public
