@@ -8,9 +8,7 @@ uses
   UfrmETDatamodule1 in 'UfrmETDatamodule1.pas' {DataModule1: TDataModule},
   UfrmAccountView in 'UfrmAccountView.pas' {frmProfileView},
   UfrmPostview in 'UfrmPostview.pas' {frmPostView},
-  UfrmPostCreater in 'UfrmPostCreater.pas' {PostCreater},
-  Post in 'Post.pas',
-  Controller in 'Controller.pas';
+  UfrmPostCreater in 'UfrmPostCreater.pas' {PostCreater};
 
 {$R *.res}
 

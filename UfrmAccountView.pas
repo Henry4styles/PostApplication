@@ -24,9 +24,9 @@ type
     DBEdit2: TDBEdit;
     btnChangeImage: TButton;
   private
-    m_UserID: string;
+    { Private-Deklarationen }
   public
-
+    { Public-Deklarationen }
   end;
 
 var
@@ -35,17 +35,5 @@ var
 implementation
 
 {$R *.dfm}
-
-{ TfrmProfileView }
-
-
-
-{ TfrmProfileView }
-
-
-
-{ TfrmProfileView }
-
-
 
 end.

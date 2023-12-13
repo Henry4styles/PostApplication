@@ -127,8 +127,6 @@
             <Form>PostCreater</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Post.pas"/>
-        <DCCReference Include="Controller.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

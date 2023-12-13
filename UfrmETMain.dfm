@@ -2,7 +2,7 @@ object frmETHomepage: TfrmETHomepage
   Left = 429
   Top = 83
   Caption = 'Homepage'
-  ClientHeight = 884
+  ClientHeight = 879
   ClientWidth = 1097
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -58,10 +58,6 @@ object frmETHomepage: TfrmETHomepage
       Caption = 'sign up'
       ImageName = 'MnuItmSignUp'
       OnClick = actShowRegisterFrmExecute
-    end
-    object Accountview1: TMenuItem
-      Caption = 'Accountview'
-      OnClick = Accountview1Click
     end
   end
   object ActionList1: TActionList

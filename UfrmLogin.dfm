@@ -1,6 +1,6 @@
 object PasswordDlg: TPasswordDlg
-  Left = 855
-  Top = 507
+  Left = 797
+  Top = 579
   BorderStyle = bsDialog
   Caption = 'Passwort-Dialog'
   ClientHeight = 152

@@ -21,13 +21,11 @@ type
     txtRepeatPassword: TEdit;
     procedure btnRegisterClick(Sender: TObject);
     procedure btnCancelClick(Sender: TObject);
-    procedure btnSwitchLoginClick(Sender: TObject);
-    procedure FormShow(Sender: TObject);
 
   private
     { Private-Deklarationen }
   public
-    m_Loginpressed: boolean;
+    { Public-Deklarationen }
   end;
 
 var
@@ -79,20 +77,6 @@ begin
             end;
         end;
     end;
-end;
-
-
-procedure TfrmETRegister.btnSwitchLoginClick(Sender: TObject);
-begin
-       //.free
-    m_Loginpressed := true;
-    UfrmETSignUp.frmETRegister.close;
-
-end;
-
-procedure TfrmETRegister.FormShow(Sender: TObject);
-begin
-    m_Loginpressed := false;
 end;
 
 

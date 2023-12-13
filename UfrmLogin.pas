@@ -25,7 +25,6 @@ type
     Eingabe: boolean;
     _UserID :string;
     loggedin :boolean;
-    origin: string;
   end;
 
 var
@@ -79,10 +78,7 @@ begin
 end;
 procedure TPasswordDlg.FormShow(Sender: TObject);
 begin
-    if origin = 'signup' then
-    begin
 
-    end;
     txtUsername.clear;
     txtPassword.Clear;
     loggedin := false;

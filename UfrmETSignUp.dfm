@@ -11,7 +11,6 @@ object frmETRegister: TfrmETRegister
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poDesigned
-  OnShow = FormShow
   TextHeight = 15
   object lblEnterUsername: TLabel
     Left = 32
@@ -68,9 +67,7 @@ object frmETRegister: TfrmETRegister
     Width = 105
     Height = 25
     Caption = 'Login'
-    ModalResult = 8
     TabOrder = 2
-    OnClick = btnSwitchLoginClick
   end
   object btnCancel: TButton
     Left = 393
