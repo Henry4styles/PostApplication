@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.Menus, UfrmLogin, UfrmETSignUp, UfrmETDatamodule1,
-  System.Actions, Vcl.ActnList, System.Hash, Vcl.DBCtrls, UfrmPostView, UfrmPostCreater;
+  System.Actions, Vcl.ActnList, System.Hash, Vcl.DBCtrls, UfrmPostView, UfrmPostCreater, UfrmAccountView;
 
 type
 
@@ -23,6 +23,7 @@ type
     pnlInhalt: TPanel;
     ScrollBar1: TScrollBar;
     pnlInhalt2: TPanel;
+    Accountview1: TMenuItem;
     procedure MnuItmHomepageClick(Sender: TObject);
     procedure actShowHomepageExecute(Sender: TObject);
     procedure actShowLoginFrmExecute(Sender: TObject);
@@ -33,7 +34,8 @@ type
     function GetPostFooter(_integer: integer):string;
     procedure ScrollBar1Change(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure Buttonclick(Sender: TObject);
+    procedure Postübergabe(Sender: TObject);
+    procedure Accountview1Click(Sender: TObject);
   private
     pnlPost :TPanel;
     MemHeader :TMemo;
@@ -43,6 +45,8 @@ type
     lblTitle: TLabel;
   public
     m_PostID: string;
+    m_UserID: string;
+    constructor pnlCreate( pnlName: string); overload;
     { Public-Deklarationen }
   end;
 
@@ -52,6 +56,14 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmETHomepage.Accountview1Click(Sender: TObject);
+begin
+    if Ufrmlogin.PasswordDlg.loggedin then
+    begin
+        //UfrmAccountView.frmProfileView.Create(m_UserID)
+    end;
+end;
 
 procedure TfrmETHomepage.actShowHomepageExecute(Sender: TObject);
 begin
@@ -67,20 +79,42 @@ end;
 
 procedure TfrmETHomepage.actShowRegisterFrmExecute(Sender: TObject);
 begin
+    UfrmETSignUp.frmETRegister := UfrmETSignUp.TfrmETRegister.Create(nil);
     UfrmETSignUp.frmETRegister.ShowModal;
+    UfrmETSignUp.frmETRegister.free;
+    if UfrmETSignUp.frmETRegister.m_Loginpressed then
+    begin
+        UfrmLogin.PasswordDlg.ShowModal;
+    end;
 end;
 
 
-procedure TfrmETHomepage.Buttonclick(Sender: TObject);
+
+constructor TPanel.pnlCreate(pnlName: string);
 begin
-    m_PostID := PnlPost.Hint;
+    inherited;
+
+end;
+
+procedure TfrmETHomepage.Postübergabe(Sender: TObject);
+begin
+    //m_PostID := PnlPost.Hint;
     if Ufrmlogin.PasswordDlg.loggedin = false then
     begin
         UfrmLogin.PasswordDlg.ShowModal;
+        if UfrmLogin.PasswordDlg.ModalResult = mrOK then
+        begin
+//            UfrmPostView.frmPostView.Create(nil);
+            UfrmPostView.frmPostView._PostID := m_PostID.tointeger;
+            UfrmPostView.frmPostView.ShowModal;
+//            UfrmPostView.frmPostView.Free;
+        end;
     end else
     begin
-    UfrmPostView.frmPostView._PostID := m_PostID.tointeger;
-    UfrmPostView.frmPostView.ShowModal;
+//        UfrmPostView.frmPostView.Create(nil);
+        UfrmPostView.frmPostView._PostID := m_PostID.tointeger;
+        UfrmPostView.frmPostView.ShowModal;
+//        UfrmPostView.frmPostView.Free;
     end;
 
 
@@ -91,15 +125,19 @@ var
     i: integer;
 
 begin
-   UfrmETDatamodule1.DataModule1.QueryPost.SQL.Text := 'SELECT * FROM ETPost LEFT JOIN ETUserLoginData ON ETPost.UserID = ETUserLoginData.UserID ';
-   UfrmETDatamodule1.DataModule1.QueryPost.Open;
+
+     UfrmETDatamodule1.DataModule1.QueryPost.SQL.Text := 'SELECT * FROM ETPost LEFT JOIN ETUserLoginData ON ETPost.UserID = ETUserLoginData.UserID ';
+     UfrmETDatamodule1.DataModule1.QueryPost.Open;
 
 
     if not UfrmETDatamodule1.DataModule1.QueryPost.RecordCount < 1 then
+    //Laut Marvin kann ich den bezeichner beim Create übergeben. So kann ich ein basisevent erstellen, und dann zu jedem Post-Panel ein event vererbt von dem basisevent erstellen
+
     begin
         UfrmETDatamodule1.DataModule1.QueryPost.first;
         for i := 1 to UfrmETDatamodule1.DataModule1.QueryPost.RecordCount do
         begin
+
             //UfrmETDatamodule1.DataModule1.QueryPost.SQL.text := 'SELECT * FROM ETUserLoginData';
             pnlPost := Tpanel.Create(Self);
             pnlPost.Parent := frmETHomepage.pnlInhalt2;
@@ -109,8 +147,9 @@ begin
             pnlPost.Left := 10;
 
 //            procedure TfrmETHomepageLogout.pnlPost.onClick(sender: TObject);
-            PnlPost.Hint :=  UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('PostID').Asstring;
-            pnlPost.OnClick:= Buttonclick;
+            //m_PostID :=  UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('PostID').Asstring;
+            m_PostID :=  UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('PostID').Asstring;
+            pnlPost.OnClick:= Postübergabe;
 
 
             memHeader := TMemo.Create(Self);
@@ -182,7 +221,6 @@ begin
     if _integer <> 1 then
     begin
         UfrmETDatamodule1.DataModule1.QueryPost.Next;
-
         result := UfrmETDatamodule1.DataModule1.QueryPost.FieldByName('HeadlinePostLink').Asstring;
 
     end else
@@ -202,22 +240,25 @@ procedure TfrmETHomepage.Postschreiben1Click(Sender: TObject);
 begin
     if UfrmLogin.PasswordDlg.loggedin = true then
     begin
+        UfrmPostCreater.PostCreater := UfrmPostCreater.PostCreater.create(PostCreater);
         UfrmPostCreater.PostCreater.ShowModal;
-
+        UfrmPostCreater.PostCreater.Free;
     end else
     begin
         Passworddlg.showModal;
         if UfrmLogin.PasswordDlg.loggedin = true then
         begin
+            UfrmPostCreater.PostCreater := UfrmPostCreater.PostCreater.create(PostCreater);
             UfrmPostCreater.PostCreater.ShowModal;
 
+            //Idee für Morgen: über den Modal result übergeben. so dann in der Main form login öffnen und Signup destroyen
         end;
     end;
 
 end;
 procedure TfrmETHomepage.ScrollBar1Change(Sender: TObject);
 begin
-        frmETHomepage.pnlInhalt2.top := ScrollBar1.Position * -100;
+    frmETHomepage.pnlInhalt2.top := ScrollBar1.Position * -100;
 end;
 
 
